@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+  <meta name="description" content="1.说一下http和httpshttps的SSL加密是在传输层实现的。
+(1)http和https的基本概念
+http:超文本传输协议，是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，">
+
+
+<link rel="alternate" href="/atom.xml" title="郭小胖的Blog" type="application/atom+xml">
+<meta name="theme-color" content="#a1d0f6">
+<title>HTTP/HTML/浏览器 - 郭小胖的Blog</title>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="shortcut icon" href="/favicon.png">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<nav class="main-nav">
+	
+	    <a href="/">← Home</a>
+	
+	
+	    <a href="/about/">About</a>
+	
+	    <a href="/archives/">Archives</a>
+	
+	<a class="cta" href="/atom.xml" data-no-instant>Subscribe</a>
+</nav>
+
+<section id="wrapper">
+    <article class="post">
+    <header>
+        
+            <h1>HTTP/HTML/浏览器</h1>
+        
+        <h2 class="headline">Apr 10 2023
+        
+        </h2>
+    </header>
+</article>
+<section id="post-body"><h1 id="1-说一下http和https"><a href="#1-说一下http和https" class="headerlink" title="1.说一下http和https"></a>1.说一下http和https</h1><p><strong>https的SSL加密是在传输层实现的。</strong></p>
+<h3 id="1-http和https的基本概念"><a href="#1-http和https的基本概念" class="headerlink" title="(1)http和https的基本概念"></a>(1)http和https的基本概念</h3><ul>
+<li><p>http:<br>超文本传输协议，是互联网上应用最为广泛的一种<strong>网络协议</strong>，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+</li>
+<li><p>https:<br>是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+</li>
+<li><p>https协议的主要作用是：建立一个信息安全通道，来确保数组的传输，确保网站的真实性。</p>
+</li>
+</ul>
+<h3 id="2-http和https的区别？"><a href="#2-http和https的区别？" class="headerlink" title="(2)http和https的区别？"></a>(2)http和https的区别？</h3><p>http传输的数据都是未加密的，也就是明文的，网景公司设置了SSL协议来对http协议传输的数据进行加密处理，简单来说https协议是由http和ssl协议构建的可进行加密传输和身份认证的网络协议，比http协议的安全性更高。<br>主要的区别如下：</p>
+<ul>
+<li><p>Https协议需要ca证书，费用较高。</p>
+</li>
+<li><p>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p>
+</li>
+<li><p>使用不同的链接方式，端口也不同，一般而言，http协议的端口为80，https的端口为443</p>
+</li>
+<li><p>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+</li>
+</ul>
+<h3 id="3-https协议的工作原理"><a href="#3-https协议的工作原理" class="headerlink" title="(3)https协议的工作原理"></a>(3)https协议的工作原理</h3><p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤：</p>
+<ul>
+<li>客户使用https url访问服务器，则要求web 服务器建立ssl链接。</li>
+<li>web服务器接收到客户端的请求之后，会将网站的证书（证书中包含了公钥），返回或者说传输给客户端。</li>
+<li>客户端和web服务器端开始协商SSL链接的安全等级，也就是加密等级。</li>
+<li>客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</li>
+<li>web服务器通过自己的私钥解密出会话密钥。</li>
+<li>web服务器通过会话密钥加密与客户端之间的通信。</li>
+</ul>
+<h3 id="4-https协议的优点"><a href="#4-https协议的优点" class="headerlink" title="(4)https协议的优点"></a>(4)https协议的优点</h3><ul>
+<li>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</li>
+<li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</li>
+<li>HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</li>
+<li>谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</li>
+</ul>
+<h3 id="5-https协议的缺点"><a href="#5-https协议的缺点" class="headerlink" title="(5)https协议的缺点"></a>(5)https协议的缺点</h3><ul>
+<li>https握手阶段比较费时，会使页面加载时间延长50%，增加10%~20%的耗电。</li>
+<li>https缓存不如http高效，会增加数据开销。</li>
+<li>SSL证书也需要钱，功能越强大的证书费用越高。</li>
+<li>SSL证书需要绑定IP，不能在同一个ip上绑定多个域名，ipv4资源支持不了这种消耗</li>
+</ul>
+</section>
+    
+
+    <footer id="post-meta" class="clearfix">
+        <a href="/about/">
+        <img class="avatar" src="/images/avatar.png">
+        <div>
+            <span class="dark">郭小胖的Blog</span>
+            <span></span>
+        </div>
+        </a>
+        <section id="sharing">
+            <a title="Share to Twitter" class="twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=http://example.com/2023/04/10/HTTP-HTML-%E6%B5%8F%E8%A7%88%E5%99%A8/ - HTTP/HTML/浏览器 @"><span class="icon-twitter">tweet</span></a>
+            <a title="Share to Facebook" class="facebook" href="#" onclick="
+                window.open(
+                  'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+                  'facebook-share-dialog',
+                  'width=626,height=436');
+                return false;"><span class="icon-facebook-sign">Share</span>
+            </a>
+        </section>
+    </footer>
+
+
+  <section id="comment">
+    <button class="btn" id="loadcmts" onclick="cmts.load();">Load Comments</button>
+    <div id="gitment"></div>
+    <script src='/js/gitment.browser.js'></script>
+    <link rel="stylesheet" href=''>
+    <script>
+      var cmts={
+        load:function cmts(){
+          var gitment = new Gitment({
+          
+            id: "HTTP/HTML/浏览器",
+          
+            owner: "",
+            repo: "",
+            oauth: {
+              client_id: "",
+              client_secret: "",
+            },
+          })
+          gitment.render('gitment');
+          var loadcmt = document.getElementById("loadcmts");
+          var imyourfather = loadcmt.parentNode;
+          imyourfather.removeChild(loadcmts)
+        }
+      }
+    </script>
+  </section>
+
+
+	<footer id="footer">
+	<div id="social">
+		<p class="small">©  Guo Zhenyi| Powered by Hexo & 
+			<a target="_blank" rel="noopener" href="https://github.com/F0r3at/Lights"> Lights</a>
+		</p>
+	</div>
+</footer>
+
+</section>
+
+	<script src="//cdnjs.loli.net/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+	<script data-no-instant>
+		
+		InstantClick.init('mousedown');
+	</script>
+
+
+
